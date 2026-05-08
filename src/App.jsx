@@ -64,12 +64,19 @@ export default function App () {
 			{/* this is the style of the shown boxes */}
 
 			{FoodData && FoodData.map(fud => (
-				<div key={fud.id} className="bg-amber-200 p-5 outline-2 w-full md:w-[60vw] hover:bg-amber-300 ">
+				<div key={fud.id} className="bg-amber-200 p-5 outline-2 w-full md:w-[60vw] hover:bg-amber-300 wrap-normal">
 					<h1 className="font-bold text-xl">{fud.name} </h1>
-					<div className="flex">
-						<span className="font-bold mr-2">Calories:</span><span className="mr-5">{fud.calories}</span>
-						<span className="font-bold mr-1">Protein:</span><span className="mr-5">{fud.protein}</span>
-						<span className="font-bold mr-1">Serving Size:</span><span className="mr-5">{fud.serving}</span>
+					<div className="flex flex-wrap">
+						<div>
+							<span className="font-bold mr-2">Calories:</span><span className="mr-5">{fud.calories}</span>
+						</div>
+						<div>
+							<span className="font-bold mr-1">Protein:</span><span className="mr-5">{fud.protein}</span>
+						</div>
+						<div>
+							<span className="font-bold mr-1">Serving Size:</span><span className="mr-5">{fud.serving}</span>
+						</div>
+						
 					</div>
 				</div>
 			))}
