@@ -48,8 +48,14 @@ export default function App () {
 
 	return(
 		<div className="w-full min-h-screen flex flex-col items-center bg-[#1F1F1F] p-10">
+
+			<div>
+				<h1 className="text-amber-400 text-xl font-bold">Food Nutrition Search Bar 🍴</h1>
+			</div>
+
+
 			{/* this is the search bar */}
-			<div className="bg-amber-400 p-3 mb-8 flex items-center w-screen md:max-w-2/3 ">
+			<div className="bg-amber-400 p-3 m-8 flex items-center w-full md:max-w-2/3 ">
 				<i className="fas fa-magnifying-glass fa-xl mr-10 "></i>
 				<input onChange={(e)=>{setSearch(e.target.value)}} className=" outline-none caret-amber-800 w-full " type="text" placeholder="Food" />
 			</div>
@@ -58,9 +64,13 @@ export default function App () {
 			{/* this is the style of the shown boxes */}
 
 			{FoodData && FoodData.map(fud => (
-				<div key={fud.id} className="bg-amber-200 p-5 outline-2 min-w-[60vw] hover:bg-amber-300 ">
-					<h1 className="font-bold">{fud.name} </h1>
-					<p>Calories: {fud.calories} </p>
+				<div key={fud.id} className="bg-amber-200 p-5 outline-2 w-full md:w-[60vw] hover:bg-amber-300 ">
+					<h1 className="font-bold text-xl">{fud.name} </h1>
+					<div className="flex">
+						<span className="font-bold mr-2">Calories:</span><span className="mr-5">{fud.calories}</span>
+						<span className="font-bold mr-1">Protein:</span><span className="mr-5">{fud.protein}</span>
+						<span className="font-bold mr-1">Serving Size:</span><span className="mr-5">{fud.serving}</span>
+					</div>
 				</div>
 			))}
 
