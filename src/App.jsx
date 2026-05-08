@@ -51,6 +51,7 @@ export default function App () {
 
 			<div>
 				<h1 className="text-amber-400 text-xl font-bold">Food Nutrition Search Bar 🍴</h1>
+				<h2 className="text-amber-200 text-center">Version Malaysia 😔🥺🥹</h2>
 			</div>
 
 
